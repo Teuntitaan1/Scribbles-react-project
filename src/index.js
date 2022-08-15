@@ -5,7 +5,6 @@ import Cookies from 'js-cookie';
 // simple note component
 class Note extends React.Component {
     
-
     render() {
       return (
         
@@ -74,7 +73,6 @@ class Note extends React.Component {
                 title: title,
                 text: text,
                 key : null, 
-                isediting : false,
                 color : this.generaterandomcolor(),
                 datecreated : date
 
@@ -107,7 +105,7 @@ class Note extends React.Component {
     }
     // use this when the notes array changes
     updatecookie() {
-        Cookies.set("notes", JSON.stringify(this.state.notes), {expires : 365});
+        Cookies.set("notes", JSON.stringify(this.state.notes), {expires : 9999});
         console.log("updated cookie to " + this.state.notes);
     }
     clearallnotes() {
@@ -129,12 +127,6 @@ class Note extends React.Component {
             
         }
         this.setState({notes : updatedarray});
-    }
-    // simple debug function that lists all notes in the notes array
-    listallnotes() {
-        this.state.notes.forEach(note => {
-            console.log(note);
-        });
     }
     // returns a random string from the randomcolor array which the id of the note div will use and gets the corresponding css properties
     generaterandomcolor() {
@@ -197,9 +189,6 @@ class Note extends React.Component {
     } 
   }
 
-
-
 // program initialize
 const root = ReactDOM.createRoot(document.getElementById("root"));
-
 root.render(<NoteCollector/>);
