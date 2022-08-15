@@ -1,13 +1,52 @@
+/* sitewide */
+body {
+    background-color: #2f4858;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #ffffff;
+}
+
+label {
+    border-radius: 2px;
+    font-weight: bold;
+}
+input {
+    border-radius: 2px;
+    color: #2f4858;
+    font-weight: bold;
+}
 h3 {
     font-weight: bold;
+    text-transform: capitalize;
 }
 
 button {
-    border-radius: 2px;
+    border-radius: 7px;
+    color: black;
+    font-weight: bold;
 }
-#note {
-    background-color: darkslateblue;
-    overflow: hidden;
+#removebutton {
+    border-radius: 5px;
+}
+.note{
+    overflow: visible;
     text-overflow: ellipsis;
+    border-radius: 5px;
+    max-width:50%;
+    min-width: 25%;
 }
 
+#blue {
+    background-color: #33658a;
+}
+#orange {
+    background-color: #f26419;
+}
+#yellow {
+    background-color: #ffb800;
+}
+#green {
+    background-color: #6EEB83;
+}
+#lightblue {
+    background-color: #55dde0;
+}
