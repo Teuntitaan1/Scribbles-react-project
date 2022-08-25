@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import Cookies from 'js-cookie';
+
 // simple note component
 class Note extends React.Component {
     
@@ -21,8 +22,8 @@ class Note extends React.Component {
         );
     }
   }
-  // center note collector that manages the whole program
-  class NoteCollector extends React.Component {
+  // center note collector that manages the whole program, also houses the homepage and copy paste functionality
+  class SCRIBBLE extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -92,6 +93,9 @@ class Note extends React.Component {
         }, 1000);
     }
 
+
+    // TODO add a copy notes button
+
     
     // removes the object with the corresponding key from the notes array to prevent it from being rendered
     removenote(key) {
@@ -151,7 +155,7 @@ class Note extends React.Component {
     render() {
       return (
         // html
-        <div id="notecollector">
+        <div id="notesystem">
             
             <button onClick={ () => {this.clearallnotes(); this.updatecookie();}}>Clear all</button>
             <p>Amount of notes: {this.state.notes.length}</p>
@@ -173,7 +177,7 @@ class Note extends React.Component {
                 </form>
             
             </div>
-
+            <div id="notes">
             {this.state.notes.map(({title, text, key, color, datecreated}) => (
             <div className="note" id= {color} key={key}>
                 <Note title = {title} text = {text}/>
@@ -182,7 +186,7 @@ class Note extends React.Component {
             </div>
             
             ))}
-        
+            </div>
         </div>
 
         );
@@ -191,4 +195,4 @@ class Note extends React.Component {
 
 // program initialize
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<NoteCollector/>);
+root.render(<SCRIBBLE/>);

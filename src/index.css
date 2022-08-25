@@ -4,10 +4,15 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #ffffff;
 }
-
+noscript {
+    color: red;
+    font-weight: bolder;
+    font-family: 'Courier New', Courier, monospace;
+}
 label {
     border-radius: 2px;
     font-weight: bold;
+    user-select: none;
 }
 input {
     border-radius: 2px;
